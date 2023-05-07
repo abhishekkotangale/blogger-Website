@@ -38,7 +38,7 @@
           echo "email already exist";
         }else{
           if($password === $cpassword){
-            $insertquery = "insert into users(username_user,email,mobile,city,address,password,cpassword) values('$username','$email','$mobile','$city','$address','$pass','$cpass')";
+            $insertquery = "insert into users(username,email,password,cpassword) values('$username','$email','$pass','$cpass')";
 
             $iquery = mysqli_query($con,$insertquery);
 
