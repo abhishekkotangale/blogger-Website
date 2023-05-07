@@ -23,9 +23,6 @@
       if(isset($_POST['submit'])){
         $username = mysqli_real_escape_string($con, $_POST['username']);
         $email = mysqli_real_escape_string($con, $_POST['email']);
-        $mobile = mysqli_real_escape_string($con, $_POST['mobile']);
-        $city = mysqli_real_escape_string($con, $_POST['city']);
-        $address = mysqli_real_escape_string($con, $_POST['address']);
         $password = mysqli_real_escape_string($con, $_POST['password']);
         $cpassword = mysqli_real_escape_string($con, $_POST['cpassword']);
         
@@ -84,24 +81,19 @@
 
           <form action="<?php  echo htmlentities($_SERVER['PHP_SELF']);  ?>" method="POST">
             <div class="mb-3">
-              <input type="text" class="form-control" placeholder="Name" name="username" required>
+              <label for="">Name</label>
+              <input type="text" class="form-control" placeholder="What would you like to be called?" name="username" required>
             </div>
             <div class="mb-3">
+              <label for="">Email</label>
               <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Type your E-mail here...." name="email" required>
             </div>
             <div class="mb-3">
-              <input type="number" class="form-control"placeholder="Contact Number" name="mobile" required>
-            </div>
-            <div class="mb-3">
-              <input type="text" class="form-control" placeholder="City" name="city" required>
-            </div>
-            <div class="mb-3">
-              <input type="text" class="form-control" placeholder="address" name="address" required>
-            </div>
-            <div class="mb-3">
+              <label for="">Password</label>
               <input type="password" class="form-control"  placeholder="Type your Password here...." name="password" required>
             </div>
             <div class="mb-3">
+              <label for="">Confirm Password</label>
               <input type="password" class="form-control"  placeholder="Type your Password here...." name="cpassword" required>
             </div>
             <button type="submit" class="btn btn-primary" name="submit">Submit</button>
