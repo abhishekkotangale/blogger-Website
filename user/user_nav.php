@@ -9,7 +9,7 @@
   
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
    
@@ -23,35 +23,21 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link" href="login_signup/login.php"><i class="fas fa-sign-in-alt logo"></i>Login</a>
+                    <a class="nav-link" href="#">Blogs</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="login_signup/signup.php"><i class="fas fa-user-plus logo"></i>SignUp</a>
+                    <a class="nav-link" href="#">Dashboard</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Setting</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="logout.php">Logout</a>
                   </li>
                 </ul>
               </div>
             </div>
           </nav>
     </header>
-<main>
-    <section id="banner">
-        <img src="img/intro-bg_1.jpg" alt="background-image" class="img-fluid">
-        <div class="inner-banner-image shadow p-3 mb-5 rounded">
-           <div class="inner-text text-center">
-               <h2 class="pb-4">Add your Blogs</h2>
-               <p>Start Writing Your Blogs Now...</p>
-               <a type="button" class="button" href="login_signup/login.php">Get Started</a>
-           </div> 
-        </div>
-    </section>
-</main>
-
-    <footer>
-        <div class="footer-para text-center">
-            <p>Copyright © Answer. All Rights Reserved | Contact Us: +91 90000 00000</p>
-        </div>
-    </footer>
-      
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>

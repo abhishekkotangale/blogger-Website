@@ -31,8 +31,9 @@
           $email_pass = mysqli_fetch_assoc($query);
           $db_pass = $email_pass['password'];
 
-          $_SESSION['username_u'] =$email_pass['username_user'];
-          $_SESSION['id'] =$email_pass['id'];
+          $_SESSION['username_u'] =$email_pass['username'];
+          $_SESSION['id'] =$email_pass['uid'];
+          $_SESSION['avatar'] = $email_pass['avatar'];
 
           $pass_decode = password_verify($password,$db_pass);
 
@@ -40,7 +41,7 @@
             echo "login successful";
             ?>
             <script>
-              location.replace("../admin/adminhomepage.php");
+              location.replace("../user/dashboard.php");
               </script>
             <?php
           }else{
