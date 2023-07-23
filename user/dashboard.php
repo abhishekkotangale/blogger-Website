@@ -86,6 +86,7 @@
                 <div class="allBlogs p-lg-4">All Blogs</div>
                 <div class="allDrafts p-lg-4">Draft</div>
             </div>
+            
           
           
            <div class="blogs">
@@ -93,22 +94,30 @@
                     <div class="container">
 
                         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                        
+                        <?php 
+                include('../assets/connection.php');
+                $uid = $_SESSION['id'];
+                $selectQuery = "SELECT * FROM blogs WHERE uid = '$uid' and blogStatus='Published'";
+                $query = mysqli_query($con , $selectQuery);
+                while($result = mysqli_fetch_array($query)){
+                  ?>
                             <div class="col">
                             <div class="card shadow-sm">
                                 <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
                                 <div class="card-body pt-md-4">
-                                <h2>Blogs</h2>
-                                <p class="card-text pt-md-2">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.<a href="#">read more...</a></p>
+                                <h2><?php echo $result['title']; ?></h2>
+                                <p class="card-text pt-md-2"><?php echo $result['shortDesc']; ?></p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                    <a class="btn btn-sm btn-outline-secondary" href="preview.php?bid=<?php echo $result['bid']; ?>">View</a>
                                     </div>
-                                    <small class="text-body-secondary">9 mins</small>
+                                    <small class="text-body-secondary"><?php echo $result['date']; ?></small>
                                 </div>
                                 </div>
                             </div>
-                            </div>   
+                            </div>  
+                            <?php } ?> 
                         </div>
                         </div>
                 </div>
@@ -119,23 +128,30 @@
                     <div class="container">
 
                         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+                        <?php 
+                include('../assets/connection.php');
+                $uid = $_SESSION['id'];
+                $selectQuery = "SELECT * FROM blogs WHERE uid = '$uid' and blogStatus='preview'";
+                $query = mysqli_query($con , $selectQuery);
+                while($result = mysqli_fetch_array($query)){
+                  ?>
                             <div class="col">
                             <div class="card shadow-sm">
                                 <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
                                 <div class="card-body pt-md-4">
-                                <h2>Technology</h2>
-                                <p class="card-text pt-md-2">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <h2><?php echo $result['title']; ?></h2>
+                                <p class="card-text pt-md-2"><?php echo $result['shortDesc']; ?></p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                    <a class="btn btn-sm btn-outline-secondary" href="preview.php?bid=<?php echo $result['bid']; ?>">View</a>
                                     </div>
-                                    <small class="text-body-secondary">9 mins</small>
+                                    <small class="text-body-secondary"><?php echo $result['date']; ?></small>
                                 </div>
                                 </div>
                             </div>
                             </div>
-                              
+                             <?php } ?> 
                         </div>
                         </div>
                 </div>
