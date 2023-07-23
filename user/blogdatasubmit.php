@@ -26,10 +26,9 @@
         $query = mysqli_query($con,$insertquery);
 
             if($query){
-                echo "inserted";
-                header('location:index.php');
+                header("Location: preview.php?bid=" . mysqli_insert_id($con));
             }else{
-                echo "not inserted";
+                header('location:dashboard.php');
             }
     }
 
