@@ -1,6 +1,6 @@
 $(".draft").hide();
 $(".allBlogs").css("color", "rgb(133, 76, 230)");
-$(".allBlogs").css("border-bottom", "2px solid rgb(133, 76, 230)");
+
 
 $(".allDrafts").click(function(){
   $(".blogs").hide();

@@ -10,8 +10,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <style>
+        .allBlogs , .allDrafts , .addBlogBut{
+            cursor: pointer;
+        }
+        .allBlogs{
+            border-bottom: 2px solid rgb(133, 76, 230);
+        }
+    </style>
 </head>
-<body style="background-color: lightgreen;">
+<body>
 
     <?php include('user_nav.php'); ?>
     
@@ -26,10 +35,49 @@
                 <p class="pt-lg-1" style="padding-left: 40px;">I write About Technology</p>
             </div>
             <div class="col-3 p-lg-5">
-                <a href="addblog.php">Add Blog</a>
+                <a class="addBlogBut" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Blogs</a>
             </div>
         </div>
     </div>
+
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+        <div class="ms-auto p-3">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="content">
+            <center>
+                <h4>Add Blog</h4>
+            </center>
+            <form class="container" action="blogdatasubmit.php" method="post">
+                <div class="mb-3">
+                    <input type="text" class="form-control" Placeholder="Enter Your Blog Title" name="title" required>
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" Placeholder="Enter Your Short Desc" name="shortDesc" required>
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" Placeholder="Enter Tags" name="tags" required>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" id="floatingTextarea" name="description" required></textarea>
+                </div>
+                <div class="mb-3">
+                <input type="file" class="form-control" name="blogimg">
+                </div>
+                <center><button type="submit" class="btn btn-primary mb-4 " name="submit">Preview</button></center>
+            </form>
+        </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
 
     
         <div class="container">
@@ -98,5 +146,6 @@
       <?php include('../assets/footer.php'); ?>
       
       <script src="../js/tabs.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
