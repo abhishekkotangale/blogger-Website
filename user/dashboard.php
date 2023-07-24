@@ -52,7 +52,7 @@
             <center>
                 <h4>Add Blog</h4>
             </center>
-            <form class="container" action="blogdatasubmit.php" method="post">
+            <form class="container" action="blogdatasubmit.php" method="post" enctype="multipart/form-data">
                 <div class="mb-3">
                     <input type="text" class="form-control" Placeholder="Enter Your Blog Title" name="title" required>
                 </div>
@@ -105,7 +105,7 @@
                   ?>
                             <div class="col">
                             <div class="card shadow-sm">
-                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                            <img src="<?php echo $result['blogImg'];?>" width="100" height="100" class="card-img-top mt-lg-4 mb-lg-5" alt="...">
                                 <div class="card-body pt-md-4">
                                 <h2><?php echo $result['title']; ?></h2>
                                 <p class="card-text pt-md-2"><?php echo $result['shortDesc']; ?></p>
@@ -141,7 +141,7 @@
                   ?>
                             <div class="col">
                             <div class="card shadow-sm">
-                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                            <img src="<?php echo $result['blogImg'];?>" width="100" height="100" class="card-img-top mt-lg-4 mb-lg-5" alt="...">
                                 <div class="card-body pt-md-4">
                                 <h2><?php echo $result['title']; ?></h2>
                                 <p class="card-text pt-md-2"><?php echo $result['shortDesc']; ?></p>
