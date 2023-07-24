@@ -98,9 +98,10 @@
                         <?php 
                 include('../assets/connection.php');
                 $uid = $_SESSION['id'];
-                $selectQuery = "SELECT * FROM blogs WHERE uid = '$uid' and blogStatus='Published'";
+                $selectQuery = "SELECT * FROM blogs WHERE uid = '$uid' and blogStatus='Published' order by bid desc";
                 $query = mysqli_query($con , $selectQuery);
                 while($result = mysqli_fetch_array($query)){
+
                   ?>
                             <div class="col">
                             <div class="card shadow-sm">
@@ -117,7 +118,9 @@
                                 </div>
                             </div>
                             </div>  
-                            <?php } ?> 
+                            <?php
+                                 }
+                             ?> 
                         </div>
                         </div>
                 </div>
@@ -151,7 +154,9 @@
                                 </div>
                             </div>
                             </div>
-                             <?php } ?> 
+                             <?php 
+                                }
+                              ?> 
                         </div>
                         </div>
                 </div>
