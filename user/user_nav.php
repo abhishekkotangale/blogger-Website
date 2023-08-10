@@ -29,7 +29,7 @@
                     <a class="nav-link" href="#">Dashboard</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Setting</a>
+                    <a class="nav-link" href="#">Profile</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="logout.php">Logout</a>
