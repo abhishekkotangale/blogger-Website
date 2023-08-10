@@ -37,7 +37,7 @@
             $query = mysqli_query($con,$updatequery);
     
             if($query){
-                header('location:dashboard.php');
+                header('location:profile.php');
             }else{
                 echo "not inserted";
             }
@@ -52,7 +52,7 @@
             <center>
                 <h4>Update Blog</h4>
             </center>
-            <form class="container" action="blogdatasubmit.php" method="post">
+            <form class="container" action="blogdatasubmit.php" method="post" enctype="multipart/form-data">
                 <div class="mb-3">
                     <input type="text" class="form-control" Placeholder="Enter Your Blog Title" name="title" value="<?php echo $row['title'];?>" required>
                 </div>
