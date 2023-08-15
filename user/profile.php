@@ -33,12 +33,29 @@
             </form>
         </div>
 
-        <div class="p-lg-4">
-            <h1>Update Password</h1>
-            <input type="password">
-            <input type="password">
-            <button>submit</button>
-        </div>
+        <div class="container text-center pt-lg-4 pb-lg-4">
+         <div class="card shadow-lg rounded">
+            <h1 class="pt-lg-4">Change Password</h1>
+            <form action="profileUpdate/changepass.php" method="POST">
+               <div class="mb-3">
+                 <label for="exampleInputEmail1" class="form-label">Old Password</label>
+                 <input type="password" class="form-control" id="exampleInputEmail1" name="oldPass" required>
+               </div>
+               <div class="mb-3">
+                 <label for="exampleInputPassword1" class="form-label">New Password</label>
+                 <input type="password" class="form-control" id="exampleInputPassword1" name="newpass" required>
+               </div>
+               <div class="mb-3">
+                   <label for="exampleInputPassword1" class="form-label">Re-Enter New Password</label>
+                   <input type="password" class="form-control" id="exampleInputPassword1" name="cnewpass" required>
+                 </div>
+                 <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+               
+             </form>
+            
+         </div>
+     </div>
+
 
         <div class="p-lg-4">
             <a href="profileUpdate/deleteAccount.php?deleteAccount=<?php echo $uid; ?>">Delete Account</i></a></td>
