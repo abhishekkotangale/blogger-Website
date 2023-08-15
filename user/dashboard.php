@@ -22,17 +22,34 @@
 </head>
 <body>
 
-    <?php include('user_nav.php'); ?>
+    <?php 
+    
+        include('user_nav.php'); 
+        include('../assets/connection.php');
+        $uid = $_SESSION['id'];
+        $userdataquery = "select * from users where uid='$uid' ";
+        $userShowData = mysqli_query($con,$userdataquery);
+        $userData = mysqli_fetch_array($userShowData);
+
+        $userblogquery = "SELECT COUNT(*) AS row_count FROM blogs WHERE uid='$uid' and blogStatus='Published'";
+        $userblogData = mysqli_query($con, $userblogquery);
+        if ($userblogData) {
+            $userblog = mysqli_fetch_array($userblogData);
+            $row_count = $userblog['row_count'];
+        }
+    
+    ?>
+
     
     <div class="container pt-lg-5">
         <div class="row">
             <div class="col-3">
-                <img src="<?php echo $_SESSION['avatar']; ?>" alt="" class="img-fluid rounded-circle">
+                <img src="<?php echo $userData['avatar']; ?>" alt="User Profile" class="img-fluid rounded-circle">
             </div>
             <div class="col-6 p-lg-5">
-                <h3 style="padding-left: 40px;"><b><?php echo $_SESSION['username_u'] ?></b></h3>
-                <p class="pt-lg-2" style="padding-left: 40px;"><b>111</b> &rightarrow; Blogs || <b>111</b>Follower || <b>111</b>Following </p>
-                <p class="pt-lg-1" style="padding-left: 40px;">I write About Technology</p>
+                <h3 style="padding-left: 40px;"><b><?php echo $userData['username'] ?></b></h3>
+                <p class="pt-lg-2" style="padding-left: 40px;"><b><?php echo $row_count; ?></b> &rightarrow; Blogs || <b>111</b>Follower || <b>111</b>Following </p>
+                <p class="pt-lg-1" style="padding-left: 40px;"><?php echo $userData['bio'] ?></p>
             </div>
             <div class="col-3 p-lg-5">
                 <a class="addBlogBut" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Blogs</a>

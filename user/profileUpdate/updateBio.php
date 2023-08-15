@@ -13,7 +13,7 @@
             $query = mysqli_query($con,$updatequery);
     
             if($query){
-                header('location:../profile.php');
+                header('location:../dashboard.php');
             }else{
                 echo "not inserted";
             }
