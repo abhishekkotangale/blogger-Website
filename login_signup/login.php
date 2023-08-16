@@ -30,20 +30,20 @@
         if($email_count){
           $email_pass = mysqli_fetch_assoc($query);
           $db_pass = $email_pass['password'];
-
+          $_SESSION['uid'] =$email_pass['uid'];
           $_SESSION['username_u'] =$email_pass['username'];
-          $_SESSION['id'] =$email_pass['uid'];
-          $_SESSION['avatar'] = $email_pass['avatar'];
+          $_SESSION['email'] =$email_pass['email'];
+          
 
           $pass_decode = password_verify($password,$db_pass);
 
           if($pass_decode){
-            echo "login successful";
-            ?>
-            <script>
-              location.replace("../user/dashboard.php");
-              </script>
-            <?php
+            if(($email_pass['status'] == 'Not Active')){
+              header("location:sendotp.php");
+            }else if(($email_pass['status'] == 'Active')){
+              echo "login successful";
+              header('location:../user/dashboard.php');
+            }
           }else{
             echo "password incorrect";
           }

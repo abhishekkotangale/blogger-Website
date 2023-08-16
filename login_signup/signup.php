@@ -43,11 +43,17 @@
             $iquery = mysqli_query($con,$insertquery);
 
             if($iquery){
+              $email_search = "select * from users where email = '$email'";
+              $query = mysqli_query($con , $email_search);
+              $email_pass = mysqli_fetch_assoc($query);
+              $_SESSION['email'] =$email_pass['email'];
+              $_SESSION['username_u'] =$email_pass['username'];
+              $_SESSION['uid'] =$email_pass['uid'];
               ?>
       
               <script>
                   alert("inserted successful");
-                  location.replace("login.php");
+                  location.replace("sendotp.php");
               </script>
           <?php
             
@@ -66,7 +72,6 @@
       }
 
    ?>
-
 
     <div class="container-fluid background">
         
