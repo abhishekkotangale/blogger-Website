@@ -26,7 +26,7 @@
     
         include('user_nav.php'); 
         include('../assets/connection.php');
-        $uid = $_SESSION['id'];
+        $uid = $_SESSION['uid'];
         $userdataquery = "select * from users where uid='$uid' ";
         $userShowData = mysqli_query($con,$userdataquery);
         $userData = mysqli_fetch_array($userShowData);
@@ -114,7 +114,7 @@
                         
                         <?php 
                 include('../assets/connection.php');
-                $uid = $_SESSION['id'];
+                $uid = $_SESSION['uid'];
                 $selectQuery = "SELECT * FROM blogs WHERE uid = '$uid' and blogStatus='Published' order by bid desc";
                 $query = mysqli_query($con , $selectQuery);
                 while($result = mysqli_fetch_array($query)){
@@ -151,7 +151,7 @@
 
                         <?php 
                 include('../assets/connection.php');
-                $uid = $_SESSION['id'];
+                $uid = $_SESSION['uid'];
                 $selectQuery = "SELECT * FROM blogs WHERE uid = '$uid' and blogStatus='preview'";
                 $query = mysqli_query($con , $selectQuery);
                 while($result = mysqli_fetch_array($query)){

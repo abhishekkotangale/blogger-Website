@@ -2,7 +2,7 @@
     session_start();
     include('../assets/connection.php');
     include('user_nav.php');
-    $uid = $_SESSION['id'];
+    $uid = $_SESSION['uid'];
     $userdataquery = "select * from users where uid='$uid' ";
     $userShowData = mysqli_query($con,$userdataquery);
     

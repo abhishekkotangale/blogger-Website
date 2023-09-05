@@ -4,7 +4,7 @@
 
 
         include('../../assets/connection.php');
-        $userid =  $_SESSION['id'];
+        $userid =  $_SESSION['uid'];
         $password = $_POST['oldPass'];
         
         $newpass = mysqli_real_escape_string($con, $_POST['newpass']);
