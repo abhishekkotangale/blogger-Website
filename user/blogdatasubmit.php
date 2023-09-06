@@ -4,7 +4,7 @@
 
     include '../assets/connection.php';
 
-    $uid = $_SESSION['id'];
+    $uid = $_SESSION['uid'];
 
     $title = mysqli_real_escape_string($con , $_POST['title']);
     $shortDesc = mysqli_real_escape_string($con , $_POST['shortDesc']);

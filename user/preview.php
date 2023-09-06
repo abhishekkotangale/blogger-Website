@@ -4,11 +4,11 @@
     include('../assets/connection.php');
     
     
-    $uid = $_SESSION['id'];
+    $uid = $_SESSION['uid'];
     if (isset($_GET["bid"])) {
         $id = mysqli_real_escape_string($con, $_GET["bid"]);
 
-        $sql = "SELECT * FROM blogs , users WHERE bid = $id";
+        $sql = "SELECT * FROM blogs inner join users on blogs.uid = users.uid WHERE bid = $id";
         $result = mysqli_query($con, $sql);
         
         if (mysqli_num_rows($result) > 0) {
