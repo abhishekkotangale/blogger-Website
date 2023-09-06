@@ -77,6 +77,46 @@
                     </center>
                 </div>
 
+                <div class="container">
+                    <center>
+                        <h1>Comment</h1>
+                    </center>
+                    <center>
+                    <form action="postcomment.php" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="bid" value="<?php echo htmlspecialchars($id); ?>">
+                        <div class="mb-3">
+                            <textarea class="form-control" name="comment" rows="3" placeholder="Type Your Comment Here..."></textarea>
+                        </div>
+                        <center><button type="submit" class="btn btn-primary mb-4 " name="submit">Post</button></center>
+                    </form>
+                    
+                </div>
+                
+
+
+            
+
+                <div class="container" style="width:50%; margin:auto;">
+                <?php
+
+                    $commentsqlquery = "SELECT * FROM comments inner join users on comments.uid = users.uid WHERE bid = $id";
+                    $comments = mysqli_query($con, $commentsqlquery);
+            
+                    while($commentsresult = mysqli_fetch_array($comments)){
+                
+                ?>
+                    <div class="p-lg-5">
+                       <div class="d-flex">
+                            <img style="margin-right : 50px;" src="<?php echo $commentsresult['avatar']; ?>" alt="" srcset="" width="40px" height="40px">
+                            <h4><?php echo $commentsresult['username']; ?></h3>
+                            <p style="margin-left : 50px;"><?php echo $commentsresult['timestamps']; ?></p>
+                        </div>
+                        <div style="margin-left: 20%;"><p><?php echo $commentsresult['comment']; ?></p></div>
+                    </div>
+                <?php } ?>
+
+                </div>
+
             <?php
             
         } else {
@@ -85,6 +125,11 @@
     } else {
         echo "Invalid ID parameter.";
     }
+
+
+    ?>
+        
+    <?php
 
     include('../assets/footer.php');
 ?> 
