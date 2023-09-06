@@ -45,12 +45,13 @@
     
             
     
-            $updatequery = "update blogs set title='$title',shortDesc='$shortDesc', tags='$tags' ,description='$description',blogImg = '$destfile' where bid='$bid'";
+            $updatequery = "update blogs set title='$title',shortDesc='$shortDesc', tags='$tags' ,description='$description',blogImg = '$destfile' where bid='$id'";
     
             $query = mysqli_query($con,$updatequery);
     
             if($query){
-                header('location:profile.php');
+                $redirectUrl = 'preview.php?bid=' . urlencode($id);
+                header('Location: ' . $redirectUrl);
             }else{
                 echo "not inserted";
             }
