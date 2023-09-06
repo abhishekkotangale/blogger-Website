@@ -1,12 +1,12 @@
-<?php 
-    session_start();
-    include('../assets/connection.php');
+<?php
+include('../assets/connection.php');
+include('user_nav.php');
 
-    include('user_nav.php');
+$search = $_POST['search'];
 
-    ?>
+?>
 
-    <form action="searchresult.php" method="post">
+<form action="searchresult.php" method="post">
     Search <input type="text" name="search"><br>
     <input type ="submit">
     </form>
@@ -20,13 +20,13 @@
 
                         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                         
-                        <?php 
-                $selectQuery = "SELECT * FROM blogs WHERE blogStatus='Published' order by bid desc";
-                $query = mysqli_query($con , $selectQuery);
+                <?php 
+                $sql = "SELECT * FROM blogs WHERE (title LIKE '%$search%' OR description LIKE '%$search%' OR tags LIKE '%$search%') AND blogStatus='Published' ORDER BY bid DESC";
+                $query = mysqli_query($con , $sql);
                 while($result = mysqli_fetch_array($query)){
-
+                    
                   ?>
-                            <div class="col">
+                  <div class="col">
                             <div class="card shadow-sm">
                             <img src="<?php echo $result['blogImg'];?>" width="100" height="100" class="card-img-top mt-lg-4 mb-lg-5" alt="...">
                                 <div class="card-body pt-md-4">
@@ -41,15 +41,11 @@
                                 </div>
                             </div>
                             </div>  
-                            <?php
-                                 }
-                             ?> 
+                  <?php
+                    }
+                 ?>
+                            
                         </div>
                         </div>
                 </div>
            </div>
-
-    <?php
-
-    include('../assets/footer.php');
-?>
