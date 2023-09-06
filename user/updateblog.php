@@ -60,6 +60,7 @@
     
 
 ?>
+    <?php include('user_nav.php') ?>
 
     <div class="container-fluid form">
     <div class="container update-form">

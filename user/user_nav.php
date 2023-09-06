@@ -23,7 +23,7 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Blogs</a>
+                    <a class="nav-link" href="allusersblogs.php">Blogs</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="dashboard.php">Dashboard</a>
