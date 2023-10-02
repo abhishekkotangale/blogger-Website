@@ -14,7 +14,11 @@
         $newupdatequery = "update users set status='Active' where uid='$uid'";
         $nquery = mysqli_query($con,$newupdatequery);
         if($nquery){
-            header('location:../user/dashboard.php');
+            ?>
+                <script>
+                    location.replace('../user/dashboard.php');
+                </script>
+           <?php
         }else{
             echo "not inserted";
         }

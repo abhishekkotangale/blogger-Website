@@ -13,6 +13,8 @@
 
     if($commentQuery){
         $redirectUrl = 'preview.php?bid=' . urlencode($bid);
-        header('Location: ' . $redirectUrl);
+        
+        
+        echo "<script>window.location.replace('$redirectUrl');</script>";
     }
 ?>

@@ -14,31 +14,30 @@
 
     ?>
      
-    <div class="container p-lg-5">
-        <div>
-            <img src="<?php echo $userData['avatar']; ?>" alt="" srcset="" width="250px" height="250px" style="border-radius: 50%;">
+    <div class="container m-lg-5">
+        <div class="mt-5">
+            <center><img src="<?php echo $userData['avatar']; ?>" alt="" srcset="" width="250px" height="250px" style="border-radius: 50%;"></center>
             <form action="changeavatar.php" method="post" enctype="multipart/form-data">
                 <input type="file" name="avatar" class="form-control">
                 <button type="submit" class="btn btn-primary mb-4 " name="submit">Change Avatar</button>
             </form>
         </div>
-        <div class="p-lg-4">
+     <div class="p-lg-4 container">
             username
             <form action="profileUpdate/updateusername.php" method="post">
                 <input type="text" value="<?php echo $userData['username'];?>" name="username">
                 <button type="submit" class="btn btn-primary mb-4 " name="submit">Change</button>
             </form>
         </div>
-        <div class="p-lg-4">
+        <div class="p-lg-4 container">
             Bio
             <form action="profileUpdate/updateBio.php" method="post">
                 <input type="text" value="<?php echo $userData['bio'];?>" name="bio">
                 <button type="submit" class="btn btn-primary mb-4 " name="submit">Change</button>
             </form>
         </div>
-
-        <div class="container text-center pt-lg-4 pb-lg-4">
-         <div class="card shadow-lg rounded">
+    <div class="container text-center m-2  ">
+         <div class="card shadow-lg rounded p-4">
             <h1 class="pt-lg-4">Change Password</h1>
             <form action="profileUpdate/changepass.php" method="POST">
                <div class="mb-3">
@@ -60,11 +59,11 @@
          </div>
      </div>
 
-
-        <div class="p-lg-4">
-            <a href="profileUpdate/deleteAccount.php?deleteAccount=<?php echo $uid; ?>">Delete Account</i></a></td>
+    <div class="m-4 container">
+            <a href="profileUpdate/deleteAccount.php?deleteAccount=<?php echo $uid; ?>" class="btn-primary p-3" style="text-decoration:none; border-radius:12px;">Delete Account</i></a></td>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     <?php
 

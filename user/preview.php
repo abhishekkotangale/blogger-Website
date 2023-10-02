@@ -1,5 +1,8 @@
 <?php 
     session_start();
+    if(!isset($_SESSION['username_u'])){
+        header('location:../index.html');
+    }
     
     include('../assets/connection.php');
     
@@ -38,8 +41,8 @@
 
 
 
-                <div class="container pt-lg-5 pb-lg-5">
-                <a id="backButton" style="color:black; cursor:pointer;"><i class="fas fa-arrow-left" style="padding-right:12px;"></i>Go Back</a>
+                <div class="container mt-5 pb-lg-5">
+                    <div class="mb-3"><a id="backButton" style="margin-top:25px;color:black; cursor:pointer;"><i class="fas fa-arrow-left" style="padding-right:12px;"></i>Go Back</a></div>
                     <?php 
                         if(($row['blogStatus']=='preview') and ($row['uid']==$uid)){
                             ?>
@@ -52,10 +55,12 @@
                     <h1><?php echo  $row['title']; ?></h1>
                     <div class="d-flex">
                         <div class="me-auto"><p>Author: <a href="author.php?authorinfo=<?php echo $row['uid'];?>"><?php echo $row['username']; ?></a></p></div>
-                        <div class="ms-auto"><p>Publish on: <?php echo $row['date']; ?></p></div>
+                        <div class="ms-auto"><p><span class="text-success">Publish on: </span><?php echo $row['date']; ?></p></div>
                     </div>
-                    <img src="<?php echo $row['blogImg'];?>" width="100" height="100" class="card-img-top mt-lg-4 mb-lg-5" alt="..." style="height: 400px;">
-                    <p class="pb-lg-4"><?php echo nl2br($row['description']); ?></p>
+                    <div>
+                        <img src="<?php echo $row['blogImg'];?>" width="100" height="100" class="card-img-top mt-lg-4 mb-lg-5" alt="..." style="height: 400px;">
+                    </div>
+                    <p class="mt-4"><?php echo nl2br($row['description']); ?></p>
 
                     <center>
                         <?php 
@@ -77,7 +82,7 @@
                     </center>
                 </div>
 
-                <div class="container">
+                <div class="container mt-5">
                     <center>
                         <h1>Comment</h1>
                     </center>
@@ -105,13 +110,18 @@
                     while($commentsresult = mysqli_fetch_array($comments)){
                 
                 ?>
-                    <div class="p-lg-5">
-                       <div class="d-flex">
-                            <img style="margin-right : 50px;" src="<?php echo $commentsresult['avatar']; ?>" alt="" srcset="" width="40px" height="40px">
-                            <h4><?php echo $commentsresult['username']; ?></h3>
-                            <p style="margin-left : 50px;"><?php echo $commentsresult['timestamps']; ?></p>
+                    <div class="mb-4">
+                       <div class="row">
+                            <div class="col-lg-1 col-md-2 col-4"><img style=" border-radius:50px;" src="<?php echo $commentsresult['avatar']; ?>" alt="" srcset="" width="40px" height="40px"></div>
+                            <div class="col-lg-4 col-md-5 col-8" style=" float:left";><h4 style=" float:left;"><?php echo $commentsresult['username']; ?></h3></div>
+                            <div class="col-lg-3 col-md-4 col-12"><p><?php echo $commentsresult['timestamps']; ?></p></div>
+                            
                         </div>
-                        <div style="margin-left: 20%;"><p><?php echo $commentsresult['comment']; ?></p></div>
+                        <div class="row mt-1">
+                            <div class="col-lg-1 col-md-2"></div>
+                            <div class="col"><div style=""><p><?php echo $commentsresult['comment']; ?></p></div></div>
+                        </div>
+                        
                     </div>
                 <?php } ?>
 

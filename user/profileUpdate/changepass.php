@@ -35,15 +35,20 @@
                 $passquery = mysqli_query($con,$updatequery);
                 if($passquery){
                     ?>
-                        <script>alert("Password changed")</script>
+                        <script>
+                            alert("Password changed")
+                            location.replace('../profile.php');
+                        </script>
                     <?php
-                    header('location:../profile.php');
                 }else{
                     echo "not changed";
                  ?>
-                        <script>alert("not Changed")</script>
+                        <script>
+                            alert("not Changed");
+                            location.replace('../profile.php');    
+                        </script>
+                        
                     <?php
-                    header('location:../profile.php');
                 }
             }else{
                 echo "your new password not match";

@@ -15,9 +15,9 @@
         ?>
             <script>
                 alert("Deleted Successfully");
+                location.replace('dashboard.php');
             </script>
         <?php
-            header('location:dashboard.php');
     }else{
         ?>
             <script>

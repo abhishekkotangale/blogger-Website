@@ -13,7 +13,9 @@
             $query = mysqli_query($con,$updatequery);
     
             if($query){
-                header('location:../dashboard.php');
+                ?>
+                    <script>location.replace('../dashboard.php');</script>
+                <?php
             }else{
                 echo "not inserted";
             }

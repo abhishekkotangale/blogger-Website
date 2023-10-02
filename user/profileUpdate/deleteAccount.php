@@ -19,10 +19,10 @@
         ?>
         <script>
             alert("deleted Successfully");
+            location.replace('../../index.html');
         </script>
 
         <?php
-        header('location:../../index.html');
     }else{
         ?>
         <script>

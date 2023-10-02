@@ -1,18 +1,55 @@
 <?php 
     session_start();
     if(!isset($_SESSION['username_u'])){
-        header('location:../index.html');
+       ?>
+            <script>
+                location.replace('../index.html');
+            </script>
+       <?php
     }
     include('../assets/connection.php');
 
     include('user_nav.php');
 
     ?>
-
+<head>
+    <style>
+        .nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+    </style>
+</head>
     
-
+<div class="nav-scroller py-1 mb-3 border-bottom" style="
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+">
+    <nav class="nav nav-underline justify-content-between">
+        <a class="nav-item nav-link link-body-emphasis text-dark" href="searchresult.php?search=World">World</a>
+        <a class="nav-item nav-link link-body-emphasis text-dark" href="searchresult.php?search=U.S.">U.S.</a>
+        <a class="nav-item nav-link link-body-emphasis text-dark" href="searchresult.php?search=Technology">Technology</a>
+        <a class="nav-item nav-link link-body-emphasis text-dark" href="searchresult.php?search=Design">Design</a>
+        <a class="nav-item nav-link link-body-emphasis text-dark" href="searchresult.php?search=">Culture</a>
+        <a class="nav-item nav-link link-body-emphasis text-dark" href="searchresult.php?search=Culture">Business</a>
+        <a class="nav-item nav-link link-body-emphasis text-dark" href="searchresult.php?search=Politics">Politics</a>
+        <a class="nav-item nav-link link-body-emphasis text-dark" href="searchresult.php?search=Opinion">Opinion</a>
+        <a class="nav-item nav-link link-body-emphasis text-dark" href="searchresult.php?search=Science">Science</a>
+        <a class="nav-item nav-link link-body-emphasis text-dark" href="searchresult.php?search=Health">Health</a>
+        <a class="nav-item nav-link link-body-emphasis text-dark" href="searchresult.php?search=Style">Style</a>
+        <a class="nav-item nav-link link-body-emphasis text-dark" href="searchresult.php?search=Travel">Travel</a>
+    </nav>
+  </div>
 <div class="blogs pt-lg-5">
-    <center>
+    <center class="mt-4">
         <h1>Blogs</h1>
     </center>
                 <div class="album py-5 bg-body-tertiary">
@@ -48,7 +85,7 @@
                         </div>
                 </div>
            </div>
-
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <?php
 
     include('../assets/footer.php');

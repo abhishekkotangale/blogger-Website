@@ -30,9 +30,15 @@
         $query = mysqli_query($con, $insertquery);
     
         if ($query) {
-            header("Location: preview.php?bid=" . mysqli_insert_id($con));
+           
+            $redirectUrl =  "preview.php?bid=" . mysqli_insert_id($con);
+            echo "<script>window.location.replace('$redirectUrl');</script>";
         } else {
-            header('location:dashboard.php');
+            ?>
+            <script>
+                location.replace('dashboard.php');
+            </script>
+            <?php
         }
     }
 

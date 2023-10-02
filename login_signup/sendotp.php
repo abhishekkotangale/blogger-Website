@@ -30,7 +30,12 @@ $message = $num;
          $query = mysqli_query($con,$updatequery);
  
          if($query){
-             header('location:otp.php');
+             ?>
+              <script>
+                  location.replace('otp.php');
+              </script>
+              <?php
+
          }else{
              echo "not inserted";
          }

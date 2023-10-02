@@ -26,7 +26,9 @@
             $query = mysqli_query($con,$updatequery);
     
             if($query){
-                header('location:profile.php');
+                ?>
+                    <script>location.replace('profile.php')</script>
+                <?php
             }else{
                 echo "not inserted";
             }

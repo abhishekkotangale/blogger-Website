@@ -104,9 +104,9 @@
     
         <div class="container">
           
-            <div class="d-flex p-lg-4 justify-content-center">
-                <div class="allBlogs p-lg-4">All Blogs</div>
-                <div class="allDrafts p-lg-4">Draft</div>
+            <div class="d-flex p-4 justify-content-center">
+                <div class="allBlogs m-2 p-4">All Blogs</div>
+                <div class="allDrafts m-2 p-4">Draft</div>
             </div>
             
           

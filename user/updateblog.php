@@ -56,7 +56,7 @@
     
             if($query){
                 $redirectUrl = 'preview.php?bid=' . urlencode($id);
-                header('Location: ' . $redirectUrl);
+                echo "<script>window.location.replace('$redirectUrl');</script>";
             }else{
                 echo "not inserted";
             }

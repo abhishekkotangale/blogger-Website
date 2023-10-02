@@ -1,6 +1,4 @@
- <?php
-    session_start();
-?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +25,7 @@
         include('user_nav.php'); 
         include('../assets/connection.php');
         $uid = $_GET['authorinfo'];
-        $fuid =$_SESSION['uid'];
+        
         $userdataquery = "select * from users where uid='$uid' ";
         $userShowData = mysqli_query($con,$userdataquery);
         $userData = mysqli_fetch_array($userShowData);

@@ -39,10 +39,18 @@
 
           if($pass_decode){
             if(($email_pass['status'] == 'Not Active')){
-              header("location:sendotp.php");
+                ?>
+              <script>
+                  location.replace('sendotp.php');
+              </script>
+              <?php
             }else if(($email_pass['status'] == 'Active')){
               echo "login successful";
-              header('location:../user/dashboard.php');
+              ?>
+              <script>
+                  location.replace('../user/dashboard.php');
+              </script>
+              <?php
             }
           }else{
             echo "password incorrect";
