@@ -1,3 +1,12 @@
+<head>
+    <style>
+        @media (max-width: 768px) {
+            .inputBox{
+                width:90%;
+            }
+        }
+    </style>
+</head>
 <?php 
     session_start();
 
@@ -15,27 +24,37 @@
     ?>
      
     <div class="container m-lg-5">
-        <div class="mt-5">
-            <center><img src="<?php echo $userData['avatar']; ?>" alt="" srcset="" width="250px" height="250px" style="border-radius: 50%;"></center>
-            <form action="changeavatar.php" method="post" enctype="multipart/form-data">
-                <input type="file" name="avatar" class="form-control">
-                <button type="submit" class="btn btn-primary mb-4 " name="submit">Change Avatar</button>
+        <div class="mt-5 row">
+            <div class="col">
+                <img src="<?php echo $userData['avatar']; ?>" alt="" srcset="" width="250px" height="250px" style="border-radius: 50%;">
+            </div>
+            <form action="changeavatar.php" method="post" enctype="multipart/form-data" style="width:60%;" class="inputBox mt-5">
+                <div class="d-flex">
+                    <div>
+                        <input type="file" name="avatar" class="form-control">
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-primary mb-4 " name="submit">Change Avatar</button>
+                    </div>
+                </div>
             </form>
         </div>
-     <div class="p-lg-4 container">
-            username
-            <form action="profileUpdate/updateusername.php" method="post">
-                <input type="text" value="<?php echo $userData['username'];?>" name="username">
-                <button type="submit" class="btn btn-primary mb-4 " name="submit">Change</button>
-            </form>
-        </div>
-        <div class="p-lg-4 container">
-            Bio
-            <form action="profileUpdate/updateBio.php" method="post">
-                <input type="text" value="<?php echo $userData['bio'];?>" name="bio">
-                <button type="submit" class="btn btn-primary mb-4 " name="submit">Change</button>
-            </form>
-        </div>
+        <center>
+            <div class="p-lg-4 container">
+                username
+                <form action="profileUpdate/updateusername.php" method="post">
+                    <input type="text" class="form-control" value="<?php echo $userData['username'];?>" name="username" style="width:60%;" class="inputBox">
+                    <button type="submit" class="btn btn-primary mb-4 " name="submit">Change</button>
+                </form>
+            </div>
+            <div class="p-lg-4 container">
+                Bio
+                <form action="profileUpdate/updateBio.php" method="post">
+                    <input type="text" class="form-control" value="<?php echo $userData['bio'];?>" name="bio" style="width:60%;" class="inputBox">
+                    <button type="submit"  class="btn btn-primary mb-4 " name="submit">Change</button>
+                </form>
+            </div>
+        </center>
     <div class="container text-center m-2  ">
          <div class="card shadow-lg rounded p-4">
             <h1 class="pt-lg-4">Change Password</h1>
@@ -59,7 +78,7 @@
          </div>
      </div>
 
-    <div class="m-4 container">
+    <div class="m-4 mt-5 container text-center">
             <a href="profileUpdate/deleteAccount.php?deleteAccount=<?php echo $uid; ?>" class="btn-primary p-3" style="text-decoration:none; border-radius:12px;">Delete Account</i></a></td>
         </div>
     </div>

@@ -119,7 +119,17 @@
                         </div>
                         <div class="row mt-1">
                             <div class="col-lg-1 col-md-2"></div>
-                            <div class="col"><div style=""><p><?php echo $commentsresult['comment']; ?></p></div></div>
+                            <div class="col-lg-6 col-md-7"><div style=""><p><?php echo $commentsresult['comment']; ?></p></div></div>
+                            <div class="col-lg-5 col-md-3">
+                            <?php
+                                if(($commentsresult['bid'] == $row['bid']) && ($commentsresult['uid'] == $_SESSION['uid'])){
+                                    $msgId = $commentsresult['mid'];
+                                    ?>
+                                        <a href="deleteComment.php?deleteCommentId=<?php echo $msgId; ?>&bid=<?php echo $id; ?>">Delete</a>
+                                    <?php
+                                }
+                            ?>
+                            </div>
                         </div>
                         
                     </div>

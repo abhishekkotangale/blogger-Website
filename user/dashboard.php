@@ -53,7 +53,7 @@
             </div>
             <div class="col-6 p-lg-5">
                 <h3 style="padding-left: 40px;"><b><?php echo $userData['username'] ?></b></h3>
-                <p class="pt-lg-2" style="padding-left: 40px;"><b><?php echo $row_count; ?></b> &rightarrow; Blogs || <b>0</b> &rightarrow; Follower || <b>0</b> &rightarrow; Following </p>
+                <p class="pt-lg-2" style="padding-left: 40px;"><b><?php echo $row_count; ?></b> &rightarrow; Total Blogs </p>
                 <p class="pt-lg-1" style="padding-left: 40px;"><?php echo $userData['bio'] ?></p>
             </div>
             <div class="col-3 p-lg-5">

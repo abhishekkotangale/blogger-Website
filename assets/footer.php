@@ -13,7 +13,7 @@
 
 <footer>
         <div class="footer-para text-center">
-            <p>Copyright © Bloggers. All Rights Reserved | Contact Us: +91 90000 00000</p>
+            <p>Copyright © Bloggers. All Rights Reserved | Happy Blogging</p>
         </div>
     </footer>
 
